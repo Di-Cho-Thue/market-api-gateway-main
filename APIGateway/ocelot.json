@@ -1,0 +1,968 @@
+﻿//DownstreamScheme of Java is http
+//DownstreamScheme of C# is https
+{
+  "Routes": [
+    //Account
+    //Java
+    {
+      //đăng nhập
+      "DownstreamPathTemplate": "/api/signin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/signin", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+
+    },
+    {
+      //đăng kí
+      "DownstreamPathTemplate": "/api/signup",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/signup", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+
+    },
+    {
+      //cập nhật tài khoản
+      "DownstreamPathTemplate": "/api/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/update", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+
+    },
+    {
+      //đăng xuất
+      "DownstreamPathTemplate": "/api/signout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/signout", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+
+    },
+    //Gian hàng
+    //C#
+    { //lấy all sản phẩm
+      "DownstreamPathTemplate": "/api/sanpham",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy sp theo id
+      "DownstreamPathTemplate": "/api/sanpham/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy all đơn hàng
+      "DownstreamPathTemplate": "/api/donhang",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy đơn hàng theo gian hàng
+      "DownstreamPathTemplate": "/api/donhang/{magianhang}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/{magianhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //xác nhận đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/xacnhan",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/xacnhan", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, PUT, DELETE
+    },
+    { //GIAN HÀNG NGHỈ BÁN
+      "DownstreamPathTemplate": "/api/gianhang/nghiban/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/nghiban/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, PUT, DELETE
+    },
+    { //GIAN HÀNG ĐỔI MẬT KHẨU
+      "DownstreamPathTemplate": "/api/gianhang/doimatkhau/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/doimatkhau/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, PUT, DELETE
+    },
+    { //GIAN HÀNG CHỈNH SỬA TT
+      "DownstreamPathTemplate": "/api/gianhang/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, PUT, DELETE
+    },
+
+    //Java
+    /*{ //lấy all sp
+      "DownstreamPathTemplate": "/api/sanpham",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },*/
+    {
+      //xem thông tin một gian hàng
+      "DownstreamPathTemplate": "/api/gianhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+  
+    },
+    {
+      //xem vùng của một gian hàng
+      "DownstreamPathTemplate": "/api/gianhang/loaivung/{magianhang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/loaivung/{magianhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+  
+    },
+    {
+      //xem số cảnh cáo của một gian hàng
+      "DownstreamPathTemplate": "/api/gianhang/phieucanhcao/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/phieucanhbao/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+  
+    },
+    {
+      //gian hàng đăng nhập
+      "DownstreamPathTemplate": "/api/gianhang/signup",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/signup", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+  
+    },
+    /*{
+      //cập nhật thông tin gian hàng
+      "DownstreamPathTemplate": "/gianhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //GET, POST, DELETE
+  
+    },*/
+    {
+      //xóa một gian hàng
+      "DownstreamPathTemplate": "/gianhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "DELETE" ] //GET, POST, PUT
+  
+    },
+    {
+      //thêm sản phẩm
+       "DownstreamPathTemplate": "/api/sanpham",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham", //API Gateway URL
+       "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+ 
+     },
+     {
+      //thêm sản phẩm bằng file
+       "DownstreamPathTemplate": "/api/sanpham/file",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/file", //API Gateway URL
+       "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+ 
+     },
+     {
+      //chỉnh sửa sản phẩm
+       "DownstreamPathTemplate": "/api/sanpham/{id}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/{id}", //API Gateway URL
+       "UpstreamHttpMethod": [ "PUT" ] //GET, POST, DELETE
+ 
+     },
+     {
+      //xóa một sản phẩm
+       "DownstreamPathTemplate": "/api/sanpham/{id}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/{id}", //API Gateway URL
+       "UpstreamHttpMethod": [ "DELETE" ] //GET, POST, DELETE
+ 
+     },
+     {
+      //xem danh sách sản phẩm theo đơn hàng
+       "DownstreamPathTemplate": "/api/sanpham/donhang/khachhang/{id}/{madonhang}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/donhang/khachhang/{id}/{madonhang}", //API Gateway URL
+       "UpstreamHttpMethod": [ "GET" ] //GET, POST, DELETE
+ 
+     },
+    //Người giao hàng
+    //C#
+    { //SHIPPER XÁC NHẬN ĐƠN HÀNG
+      "DownstreamPathTemplate": "/api/donhang/accept/{madonhang}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/accept/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //POST, PUT, DELETE
+    },
+    { //XEM CHI TIET DON HANG
+      "DownstreamPathTemplate": "/api/donhang/detail/{madonhang}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/detail/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //XEM DON HANG
+      "DownstreamPathTemplate": "/api/donhang/{magianhang}/{tinhtrangdon}/{thoigian}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/{magianhang}/{tinhtrangdon}/{thoigian}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //XEM CHI TIET DON HANG
+      "DownstreamPathTemplate": "/api/chitietdonhang",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/chitietdonhang", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //THÊM CHI TIET DON HANG
+      "DownstreamPathTemplate": "/api/chitietdonhang/{madonhang}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/chitietdonhang/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //POST, PUT, DELETE
+    },
+    //Java
+
+  {
+    //lấy hoa hồng cho shipper của đơn hàng
+    "DownstreamPathTemplate": "/api/donhang/shipper/hoahong/{id}",
+    "DownstreamScheme": "http",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": "8080" //Java
+      }
+    ],
+    "UpstreamPathTemplate": "/donhang/shipper/hoahong/{id}", //API Gateway URL
+    "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+  },
+  {
+    //lấy tất cả đơn hàng của một shipper
+    "DownstreamPathTemplate": "/api/donhang/shipper/{id}",
+    "DownstreamScheme": "http",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": "8080" //Java
+      }
+    ],
+    "UpstreamPathTemplate": "/donhang/shipper/{id}", //API Gateway URL
+    "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+  },
+  {
+    //lấy tất cả hoa hồng của một shipper
+    "DownstreamPathTemplate": "/api/donhang/shipper/hoahong/sumAll/{id}",
+    "DownstreamScheme": "http",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": "8080" //Java
+      }
+    ],
+    "UpstreamPathTemplate": "/donhang/shipper/hoahong/sumAll/{id}", //API Gateway URL
+    "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+  },
+  {
+    //tính hoa hồng trong một tháng của shipper
+    "DownstreamPathTemplate": "/api/donhang/shipper/hoahong/sumMonth/{id}/{month}/{year}",
+    "DownstreamScheme": "http",
+    "DownstreamHostAndPorts": [
+      {
+        "Host": "localhost",
+        "Port": "8080" //Java
+      }
+    ],
+    "UpstreamPathTemplate": "/donhang/shipper/hoahong/sumMonth/{id}/{month}/{year}", //API Gateway URL
+    "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+  },
+    //////////////////////////////////////////////////////////////////////////////
+    //Khách hàng
+    //C#
+    { //lấy loại sp theo loại sản phẩm
+      "DownstreamPathTemplate": "/api/sanpham/loaisanpham/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham/loaisanpham/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy sp theo loại sản phẩm dành cho phân trang
+      "DownstreamPathTemplate": "/api/sanpham/loaisanpham/{id}/{page}/{limit}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham/loaisanpham/{id}/{page}/{limit}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //chỉnh sửa đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, PUT, DELETE
+    },
+    { //lấy DS KH
+      "DownstreamPathTemplate": "/api/khachhang",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/khachhang", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+
+    //JAVA
+    { //lấy sp trong giỏ hàng cua khách hàng
+      "DownstreamPathTemplate": "/api/giohang/khachhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang/khachhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy số lượng sp trong giỏ hàng của kh
+      "DownstreamPathTemplate": "/api/giohang/khachhang/amountAll/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang/khachhang/amountAll/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //lấy tổng tiền của từng đơn hàng trong giỏ hàng của kh
+      "DownstreamPathTemplate": "/api/giohang/khachhang/sumDonGia/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang/khachhang/sumDonGia/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    { //thêm giỏ hàng
+      "DownstreamPathTemplate": "/api/giohang",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+    },
+    { //update số lượng sản phẩm trong giỏ hàng
+      "DownstreamPathTemplate": "/api/giohang/soluong/{makhachhang}/{masanpham}/{soluong}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang/soluong/{makhachhang}/{masanpham}/{soluong}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //GET, POST, DELETE
+    },
+    { //xóa 1 sản phẩm khỏi giỏ hàng
+      "DownstreamPathTemplate": "/api/giohang/{makhachhang}/{masanpham}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/giohang/{makhachhang}/{masanpham}", //API Gateway URL
+      "UpstreamHttpMethod": [ "DELETE" ] //GET, POST, PUT
+    },
+    {
+     //xem danh sách sản phẩm theo id
+      "DownstreamPathTemplate": "/api/sanpham/{listid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/sanpham/{listid}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //xem danh sách sản phẩm theo listsp
+       "DownstreamPathTemplate": "/api/sanpham/listsp",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/listsp", //API Gateway URL
+       "UpstreamHttpMethod": [ "POST" ] //POST, PUT, DELETE
+ 
+     },
+     /*
+     {
+      //xem thông tin một sản phẩm
+       "DownstreamPathTemplate": "/api/sanpham/{id}",
+       "DownstreamScheme": "http",
+       "DownstreamHostAndPorts": [
+         {
+           "Host": "localhost",
+           "Port": "8080" //Java
+         }
+       ],
+       "UpstreamPathTemplate": "/sanpham/{id}", //API Gateway URL
+       "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+ 
+     },*/
+     
+    {
+      //http:\\localhost:chitietdonhang\sanpham\getAll
+      "DownstreamPathTemplate": "/api/chitietdonhang/sanpham/getALL",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/chitietdonhang/sanpham/getALL", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //xem chi tiết đon hàng của một đơn hàng
+      "DownstreamPathTemplate": "/api/chitietdonhang/donhang/{madonhang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/chitietdonhang/donhang/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //xem chi tiết đon hàng của đơn hàng theo sản phẩm
+      "DownstreamPathTemplate": "/api/chitietdonhang/{madonhang}/{masanpham}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/chitietdonhang/{madonhang}/{masanpham}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //tính số đơn hàng của một khách hàng
+      "DownstreamPathTemplate": "/api/donhang/khachhang/amountAll/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/khachhang/amountAll/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //kiểm tra sự tồn tạ của một đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/kiemtra/{madonhang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/kiemtra/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //lấy thông tin của một đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/{madonhang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //hủy đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/huydonhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/huydonhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //POST, GET, DELETE
+
+    },
+    {
+      //lấy đánh gía của một đơn hàng
+      "DownstreamPathTemplate": "/api/ktdanhgia/{madonhang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/ktdanhgia/{madonhang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //xem toàn bộ đánh giá 
+      "DownstreamPathTemplate": "/api/khdanhgia",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khdanhgia", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //xem toàn bộ đánh giá của một gian hàng
+      "DownstreamPathTemplate": "/api/khdanhgia/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khdanhgia/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      //khách hàng tạo một đánh giá
+      "DownstreamPathTemplate": "/api/khdanhgia",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khdanhgia", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //GET, PUT, DELETE
+
+    },
+    {
+      //khách hàng chỉnh sửa đánh giá
+      "DownstreamPathTemplate": "/api/khdanhgia/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khdanhgia/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "PUT" ] //GET, POST, DELETE
+
+    },
+    {
+      //khách hàng xóa đánh giá
+      "DownstreamPathTemplate": "/api/khdanhgia/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khdanhgia/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "DELETE" ] //GET, POST, PUT
+
+    },
+  
+    ///////////////////////////////////////////////////////////////////////////
+    //Nhân viên bên dịch vụ
+    //C#
+
+    //Java
+    {
+      //admin xet tất cả gian hàng
+      "DownstreamPathTemplate": "/api/gianhang",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/gianhang", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    {
+      
+      //admin xem tất cả đơn hàng
+      "DownstreamPathTemplate": "/api/donhang/admin/getAll",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/admin/getAll", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/nhanvien",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/nhanvien", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    {
+      "DownstreamPathTemplate": "/api/donhang/khachhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/donhang/khachhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    {
+      "DownstreamPathTemplate": "/api/khachhang/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "44369" //C#
+        }
+      ],
+      "UpstreamPathTemplate": "/khachhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+
+    /////////////////////////////////
+    //JAVA
+    //KhachHangController
+    {
+      "DownstreamPathTemplate": "/api/khachhang/gh_gannhat/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khachhang/gh_gannhat/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+    {
+      "DownstreamPathTemplate": "/api/khachhang/donhang/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/khachhang/donhang/{id}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+
+    //LoaiGianHangController
+    {
+      "DownstreamPathTemplate": "/api/loaigianhang",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/loaigianhang", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+
+    //LoaiSanPhamController
+    {
+      "DownstreamPathTemplate": "/api/loaisanpham",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/loaisanpham", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    },
+
+    //NguoiGiaoHangController
+    {
+      "DownstreamPathTemplate": "/api/nguoigiaohang/signup",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/nguoigiaohang/signup", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //POST, PUT, DELETE
+    },
+    {
+      "DownstreamPathTemplate": "/api/nguoigiaohang/update/{manguoigiaohang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/nguoigiaohang/update/{manguoigiaohang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "POST" ] //POST, PUT, DELETE
+    },
+    {
+      "DownstreamPathTemplate": "/api/nguoigiaohang/{manguoigiaohang}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "8080" //Java
+        }
+      ],
+      "UpstreamPathTemplate": "/nguoigiaohang/{manguoigiaohang}", //API Gateway URL
+      "UpstreamHttpMethod": [ "GET" ] //POST, PUT, DELETE
+    }
+  ],
+  "GlobalConfiguration ": {
+    "BaseURL": "https://localhost:44303"
+  }
+}
